@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1201edc06474597a66dad672d13062d8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1201edc06474597a66dad672d13062d8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1201edc06474597a66dad672d13062d8 = L.map(
+                "map_1201edc06474597a66dad672d13062d8",
+                {
+                    center: [-25.0, 133.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9f0215316ca3f7c14fe64671dfda619b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_9f0215316ca3f7c14fe64671dfda619b.addTo(map_1201edc06474597a66dad672d13062d8);
+        
+    
+            var tile_layer_b5dd7f0e3a1ef5aeb611a5e9fb89def1 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20220228/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_eaf82630c35628f3e34a34fda62ae01e = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20220107/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_efe8cc5a768e007c5b27055fbd69d1b9 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20211116/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_e795d2503c39509da092f360298144b6 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20210925/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_6fd4b24a4ad761454dec66ec275d4271 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20210804/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_0cfe2d19de4dfcfd0331927ea5623b68 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20210613/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_fd84a7ed528603ac705f90827da1ee03 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20210422/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_d70ef7a922de53d27b00f6fed28c96f3 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20210301/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_d9bd97ebd6d7c3cee72dba1dfa232ff8 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20210108/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_a3c6c368020c2c8afa9f12cb121ab35a = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20201117/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_cd84bd3248b9c65a8b773d42d32c4aec = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20200926/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_b82588760389760cb2c6da59848edc52 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20200805/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_f17898364474303fa9678c833a08878c = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20200614/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_af88dc0cf820b4307f38380408ecf730 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20200423/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_504b5eb0e5799febf5cc6d673d7f9d5a = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20200302/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_25a46d8d87369e906090ccc8863f2281 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20200110/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_414f44c088c30e6a08f13aac36178d4b = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20191119/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_7a3e879bf9ed0f4e192728d69fc25fac = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20190928/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_be6c4ab628dff4cb367798b5321498d9 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20190807/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_ea70ed6e1b27d5bd42346ffd3d2eb19a = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20190616/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_5841f8289a2f1380452ade6c9ca8c5a5 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20190425/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_be0fc0c5e89a07912c4c07a790fa3285 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20190304/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_bb881cf4a5c828fba1a3bae6f275d228 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20190111/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_3a4f98967a924cd95fb4bb364780d544 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20181120/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_a5afcedd535387d57cc686a5c793c200 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20180929/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_a194f4e79a1259752dfddfee71e9833a = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20180808/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_1338ee663a8bf46f3c815092eed0a363 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20180617/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_0fa07976206657c6512a81b8b5c3e29f = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20180426/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_a8d4508350b685461f53c1311316edc9 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20180305/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_bd7c3f56035f612fa41d7a4cb0e3047a = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20180112/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_68d4bd7b7d9c23d21f0a8de829e9f386 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20171121/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_3fb1adda0c297711a510eafd4f306f87 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20170930/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_cd71bf4e388205565a41bde5225270fd = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20170809/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_022a009991d732ea046c398b3bd07983 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20170618/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_eef2c9e079abbd8e1ddc8d4cb72133ff = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20170427/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_e69406397e8017bd61c90631217a1bce = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20170306/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_55eeaf2a3ba09874da0ca8005c6007d6 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20170113/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_f96275ca6b197198b32890934b5a9ba7 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20161121/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_5c4448e5afa21888830ec54faa0e1820 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20160930/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_10b57d0b69d38fc0cecbe92397682752 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20160809/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_5f6f17dc7837cda39ca92d2c3e32dae5 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20160618/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_f101842200ec01d8d3daf8b7af364d59 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20160427/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_e3039cb9c8545a3cd89ad1a470fe15bf = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20160306/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_26bbb9080654ceba34b0c8f192c077c9 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20160114/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_0cb1e8b435f4834a10f43cb651896e07 = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20151123/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_d3c89efbdccf236b52ac9c9a9391270d = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20151002/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_fd1c56e5d894ddd20df444314bf14fcb = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20150811/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_c8d32cf55fce5ec73839ba436227328c = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20150620/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_b4c5990ae480f2bdcdedb75bff7796dd = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20150429/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_612140196b57b629567a1ffdd243071b = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20150308/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var tile_layer_228069bda28929301fe711a0260d5b5e = L.tileLayer(
+                "https://earth.gov/ghgcenter/api/raster/collections/oco2geos-co2-daygrid-v10r/items/oco2geos-co2-daygrid-v10r-20150115/tiles/WebMercatorQuad/{z}/{x}/{y}@1x?assets=xco2\u0026color_formula=gamma+r+1.05\u0026colormap_name=inferno\u0026rescale=411.7429234611336%2C423.60419320175424",
+                {"attribution": "GHG", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 0.5, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            var layer_control_4b32c2b4c0e56a77cad726733ba8a27b_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_9f0215316ca3f7c14fe64671dfda619b,
+                },
+                overlays :  {
+                    "2022/02/28" : tile_layer_b5dd7f0e3a1ef5aeb611a5e9fb89def1,
+                    "2022/01/07" : tile_layer_eaf82630c35628f3e34a34fda62ae01e,
+                    "2021/11/16" : tile_layer_efe8cc5a768e007c5b27055fbd69d1b9,
+                    "2021/09/25" : tile_layer_e795d2503c39509da092f360298144b6,
+                    "2021/08/04" : tile_layer_6fd4b24a4ad761454dec66ec275d4271,
+                    "2021/06/13" : tile_layer_0cfe2d19de4dfcfd0331927ea5623b68,
+                    "2021/04/22" : tile_layer_fd84a7ed528603ac705f90827da1ee03,
+                    "2021/03/01" : tile_layer_d70ef7a922de53d27b00f6fed28c96f3,
+                    "2021/01/08" : tile_layer_d9bd97ebd6d7c3cee72dba1dfa232ff8,
+                    "2020/11/17" : tile_layer_a3c6c368020c2c8afa9f12cb121ab35a,
+                    "2020/09/26" : tile_layer_cd84bd3248b9c65a8b773d42d32c4aec,
+                    "2020/08/05" : tile_layer_b82588760389760cb2c6da59848edc52,
+                    "2020/06/14" : tile_layer_f17898364474303fa9678c833a08878c,
+                    "2020/04/23" : tile_layer_af88dc0cf820b4307f38380408ecf730,
+                    "2020/03/02" : tile_layer_504b5eb0e5799febf5cc6d673d7f9d5a,
+                    "2020/01/10" : tile_layer_25a46d8d87369e906090ccc8863f2281,
+                    "2019/11/19" : tile_layer_414f44c088c30e6a08f13aac36178d4b,
+                    "2019/09/28" : tile_layer_7a3e879bf9ed0f4e192728d69fc25fac,
+                    "2019/08/07" : tile_layer_be6c4ab628dff4cb367798b5321498d9,
+                    "2019/06/16" : tile_layer_ea70ed6e1b27d5bd42346ffd3d2eb19a,
+                    "2019/04/25" : tile_layer_5841f8289a2f1380452ade6c9ca8c5a5,
+                    "2019/03/04" : tile_layer_be0fc0c5e89a07912c4c07a790fa3285,
+                    "2019/01/11" : tile_layer_bb881cf4a5c828fba1a3bae6f275d228,
+                    "2018/11/20" : tile_layer_3a4f98967a924cd95fb4bb364780d544,
+                    "2018/09/29" : tile_layer_a5afcedd535387d57cc686a5c793c200,
+                    "2018/08/08" : tile_layer_a194f4e79a1259752dfddfee71e9833a,
+                    "2018/06/17" : tile_layer_1338ee663a8bf46f3c815092eed0a363,
+                    "2018/04/26" : tile_layer_0fa07976206657c6512a81b8b5c3e29f,
+                    "2018/03/05" : tile_layer_a8d4508350b685461f53c1311316edc9,
+                    "2018/01/12" : tile_layer_bd7c3f56035f612fa41d7a4cb0e3047a,
+                    "2017/11/21" : tile_layer_68d4bd7b7d9c23d21f0a8de829e9f386,
+                    "2017/09/30" : tile_layer_3fb1adda0c297711a510eafd4f306f87,
+                    "2017/08/09" : tile_layer_cd71bf4e388205565a41bde5225270fd,
+                    "2017/06/18" : tile_layer_022a009991d732ea046c398b3bd07983,
+                    "2017/04/27" : tile_layer_eef2c9e079abbd8e1ddc8d4cb72133ff,
+                    "2017/03/06" : tile_layer_e69406397e8017bd61c90631217a1bce,
+                    "2017/01/13" : tile_layer_55eeaf2a3ba09874da0ca8005c6007d6,
+                    "2016/11/21" : tile_layer_f96275ca6b197198b32890934b5a9ba7,
+                    "2016/09/30" : tile_layer_5c4448e5afa21888830ec54faa0e1820,
+                    "2016/08/09" : tile_layer_10b57d0b69d38fc0cecbe92397682752,
+                    "2016/06/18" : tile_layer_5f6f17dc7837cda39ca92d2c3e32dae5,
+                    "2016/04/27" : tile_layer_f101842200ec01d8d3daf8b7af364d59,
+                    "2016/03/06" : tile_layer_e3039cb9c8545a3cd89ad1a470fe15bf,
+                    "2016/01/14" : tile_layer_26bbb9080654ceba34b0c8f192c077c9,
+                    "2015/11/23" : tile_layer_0cb1e8b435f4834a10f43cb651896e07,
+                    "2015/10/02" : tile_layer_d3c89efbdccf236b52ac9c9a9391270d,
+                    "2015/08/11" : tile_layer_fd1c56e5d894ddd20df444314bf14fcb,
+                    "2015/06/20" : tile_layer_c8d32cf55fce5ec73839ba436227328c,
+                    "2015/04/29" : tile_layer_b4c5990ae480f2bdcdedb75bff7796dd,
+                    "2015/03/08" : tile_layer_612140196b57b629567a1ffdd243071b,
+                    "2015/01/15" : tile_layer_228069bda28929301fe711a0260d5b5e,
+                },
+            };
+            let layer_control_4b32c2b4c0e56a77cad726733ba8a27b = L.control.layers(
+                layer_control_4b32c2b4c0e56a77cad726733ba8a27b_layers.base_layers,
+                layer_control_4b32c2b4c0e56a77cad726733ba8a27b_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_1201edc06474597a66dad672d13062d8);
+
+        
+</script>
+</html>
